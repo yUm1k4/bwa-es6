@@ -76,7 +76,7 @@ let myBike = "Honda";
 // ---------------------------------
 // * Materi Map dan Filter
 // ---------------------------------
-const skills_holder = document.getElementById('skills');
+// const skills_holder = document.getElementById('skills');
 
 // ES6
 // // MAP :
@@ -89,15 +89,60 @@ const skills_holder = document.getElementById('skills');
 
 // skills_holder.innerHTML = yourSkills;
 // FILTER (bisa utk mengambil sebagian data saja):
-const yourSkills = ['HTML', 'CSS', 'JS', 'React', 'Node'];
+// const yourSkills = ['HTML', 'CSS', 'JS', 'React', 'Node'];
 
-const myPrimarySkill = yourSkills.filter(skill => {
-    // tampilkan js saja
-    // return skill === 'JS';
+// const myPrimarySkill = yourSkills.filter(skill => {
+//     // tampilkan js saja
+//     // return skill === 'JS';
     
-    // kecuali
-    return skill !== 'HTML';
-});
+//     // kecuali
+//     return skill !== 'HTML';
+// });
 
-// console.log(myPrimarySkill);
-skills_holder.innerHTML = myPrimarySkill;
+// // console.log(myPrimarySkill);
+// skills_holder.innerHTML = myPrimarySkill;
+
+
+// ---------------------------------
+// * Materi Classes
+// ---------------------------------
+class Siswa {
+    constructor(username, password, nama_kelas) {
+        this.username = username;
+        this.password = password;
+        this.nama_kelas = nama_kelas;
+    }
+
+    gabung() {
+        console.log(`${this.username} telah gabung ke kelas ${this.nama_kelas}`);
+    }
+    
+    hitungMember() {
+        console.log('Jumlah member : 10');
+    }
+}
+
+// let tambahSiswa = new Siswa('Zainudin', '12345', 'XII RPL 3');
+// console.log(tambahSiswa);
+
+// ---------------------------------
+// * Materi Inheritance
+// ---------------------------------
+class Langganan extends Siswa {
+    constructor(username, paket) {
+        super(username); // super = mengambil data dari class parent yaitu Siswa
+        this.paket = paket;
+    }
+
+    // membuat suatu fungsi bahwa username tst dikelas siswa sudah bergabung di kelas apa
+    gabungPaket() {
+        console.log(`${this.username} telah berlangganan di paket ${this.paket}`);
+    }
+}
+
+
+let tambahLangganan = new Langganan('Zainudin', 'Premium');
+
+// tambahLangganan.gabung();
+// tambahLangganan.hitungMember();
+tambahLangganan.tambahLangganan();
